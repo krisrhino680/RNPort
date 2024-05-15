@@ -25,65 +25,67 @@ function HomePage({ navigation }) {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
-    return (
-        <ScrollView style={styles.container}>
-            <View style={styles.header}>
-                <Text style={styles.headerText}>{person.name}</Text>
-                <View style={styles.nav}>
-                    <Pressable onPress={() => navigation.navigate('Home')}>
-                        <Text style={styles.navText}>Home</Text>
-                    </Pressable>
-                    <Pressable onPress={() => navigation.navigate('Projects')}>
-                        <Text style={styles.navText}>Projects</Text>
-                    </Pressable>
-                    <Pressable onPress={() => navigation.navigate('Resume')}>
-                        <Text style={styles.navText}>Resume</Text>
-                    </Pressable>
-                    <Pressable onPress={() => navigation.navigate('Contact')}>
-                        <Text style={styles.navText}>Contact</Text>
-                    </Pressable>
-                </View>
-            </View>
-            <View style={styles.profileContainer}>
-                <Image style={styles.profileImage} source={{ uri: '../assets/kr_picture1.jpg' }} />
-                <View style={styles.skillsContainer}>
-                    <Text style={styles.skillsHeader}>Skills</Text>
-                    {portfolio && portfolio.renderSkills()}
-                </View>
-            </View>
-            <View style={styles.articleContainer}>
-                <Text style={styles.articleTitle}>Who am I?</Text>
-                <Text style={styles.articleText}>
-                    Hello everyone I am Kris! I am 46 years old, married, and a father of two. I live in Mosinee, WI and I am looking to be your next programmer. I have always done well with anything done on a computer starting as a CNC operator to helping problem solve the newest machine in my company. I am looking for a great opportunity to work on making programs for other company’s and help make things run better. You will find not only a leader, but someone is also very organized and is good at following instruction. We can make your company better together. I look forward to working with you in the future.
-                </Text>
-                <Pressable style={styles.linkedinButton} onPress={() => Linking.openURL('https://www.linkedin.com/in/kris-rheinschmidt-6a487a91')}>
-                    <Text>LinkedIn Profile</Text>
-                </Pressable>
-            </View>
-
-            {/* References Table */}
-            <View style={styles.referencesContainer}>
-                <Text style={styles.referencesTitle}>Names Of References</Text>
-                {references.map((reference, index) => (
-                    <View key={index} style={styles.referenceRow}>
-                        <Text>{reference.firstName}</Text>
-                        <Text>{reference.lastName}</Text>
-                        <Text>{reference.relationship}</Text>
+    const HomePage = ({ navigation }) => {
+        return (
+            <ScrollView style={styles.container}>
+                <View style={styles.header}>
+                    <Text style={styles.headerText}>{person.name}</Text>
+                    <View style={styles.nav}>
+                        <Pressable onPress={() => navigation.navigate('Home')}>
+                            <Text style={styles.navText}>Home</Text>
+                        </Pressable>
+                        <Pressable onPress={() => navigation.navigate('Projects')}>
+                            <Text style={styles.navText}>Projects</Text>
+                        </Pressable>
+                        <Pressable onPress={() => navigation.navigate('Resume')}>
+                            <Text style={styles.navText}>Resume</Text>
+                        </Pressable>
+                        <Pressable onPress={() => navigation.navigate('Contact')}>
+                            <Text style={styles.navText}>Contact</Text>
+                        </Pressable>
                     </View>
-                ))}
-            </View>
+                </View>
+                <View style={styles.profileContainer}>
+                    <Image style={styles.profileImage} source={{ uri: '../assets/kr_picture1.jpg' }} />
+                    <View style={styles.skillsContainer}>
+                        <Text style={styles.skillsHeader}>Skills</Text>
+                        {portfolio && portfolio.renderSkills()}
+                    </View>
+                </View>
+                <View style={styles.articleContainer}>
+                    <Text style={styles.articleTitle}>Who am I?</Text>
+                    <Text style={styles.articleText}>
+                        Hello everyone I am Kris! I am 46 years old, married, and a father of two. I live in Mosinee, WI and I am looking to be your next programmer. I have always done well with anything done on a computer starting as a CNC operator to helping problem solve the newest machine in my company. I am looking for a great opportunity to work on making programs for other company’s and help make things run better. You will find not only a leader, but someone is also very organized and is good at following instruction. We can make your company better together. I look forward to working with you in the future.
+                    </Text>
+                    <Pressable style={styles.linkedinButton} onPress={() => Linking.openURL('https://www.linkedin.com/in/kris-rheinschmidt-6a487a91')}>
+                        <Text>LinkedIn Profile</Text>
+                    </Pressable>
+                </View>
 
-            {/* Footer */}
-            <View style={styles.footer}>
-                <Text style={styles.address}>202720 Alicia Lane, Mosinee WI 54455</Text>
-                <Text>©KrisRheinschmidt.com, Inc. All rights reserved.</Text>
-                <Text style={styles.emailLink} onPress={() => Linking.openURL('mailto:krisrhino680@yahoo.com')}>krisrhino680@yahoo.com</Text>
-                <Pressable style={styles.topButton} onPress={scrollToTop}>
-                    <Text style={styles.topButtonText}>To Top</Text>
-                </Pressable>
-            </View>
-        </ScrollView>
-    );
+                {/* References Table */}
+                <View style={styles.referencesContainer}>
+                    <Text style={styles.referencesTitle}>Names Of References</Text>
+                    {references.map((reference, index) => (
+                        <View key={index} style={styles.referenceRow}>
+                            <Text>{reference.firstName}</Text>
+                            <Text>{reference.lastName}</Text>
+                            <Text>{reference.relationship}</Text>
+                        </View>
+                    ))}
+                </View>
+
+                {/* Footer */}
+                <View style={styles.footer}>
+                    <Text style={styles.address}>202720 Alicia Lane, Mosinee WI 54455</Text>
+                    <Text>©KrisRheinschmidt.com, Inc. All rights reserved.</Text>
+                    <Text style={styles.emailLink} onPress={() => Linking.openURL('mailto:krisrhino680@yahoo.com')}>krisrhino680@yahoo.com</Text>
+                    <Pressable style={styles.topButton} onPress={scrollToTop}>
+                        <Text style={styles.topButtonText}>To Top</Text>
+                    </Pressable>
+                </View>
+            </ScrollView>
+        );
+    };
 }
 
 class Portfolio {
