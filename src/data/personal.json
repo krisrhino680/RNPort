@@ -1,0 +1,26 @@
+{
+  "personalDetails": {
+    "name": "Kris Rheinschmidt",
+    "age": 45,
+    "location": "Mosinee, WI",
+    "email": "krisrhino680@yahoo.com"
+  },
+  "skills": ["C#", "Web Design", "Problem Solving", "First Responder", "Programming", "Mobile Programming", ".NET"],
+  "references": [
+    {
+      "firstName": "Steve",
+      "lastName": "Chaney",
+      "relationship": "Best Friend"
+    },
+    {
+      "firstName": "Jamie",
+      "lastName": "Frank",
+      "relationship": "Friend"
+    },
+    {
+      "firstName": "Nick",
+      "lastName": "Louis",
+      "relationship": "Current Boss"
+    }
+  ]
+}
